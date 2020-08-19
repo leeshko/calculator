@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>калькулятор</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+
+	<input type="text" value="" disabled name="display" id="display" />
+
+	<br />
+	<p></p>
+
+	<button onclick="button(1)"> 1 </button>
+	<button onclick="button(2)"> 2 </button>
+	<button onclick="button(3)"> 3 </button>
+	<button onclick="operate('+')"> + </button>
+
+	<br />
+
+	<button onclick="button(4)"> 4 </button>
+	<button onclick="button(5)"> 5 </button>
+	<button onclick="button(6)"> 6 </button>
+	<button onclick="operate('-')"> - </button>
+
+	<br />
+
+	<button onclick="button(7)"> 7 </button>
+	<button onclick="button(8)"> 8 </button>
+	<button onclick="button(9)"> 9 </button>
+	<button onclick="operate('*')"> * </button>
+
+	<br />
+
+	<button onclick="clearDisp()"> c </button>
+	<button onclick="button(0)"> 0 </button>
+	<button onclick="doIt()"> = </button>
+	<button onclick="operate('/')"> / </button>
+
+	<br />
+
+
+
+	<script>
+		'use strict'
+
+		let button = function (num) {
+			if (needClear == true) {
+				document.querySelector('#display').value = '';
+				needClear = false;
+			}
+			document.querySelector('#display').value += num;
+
+		}
+
+		let value1;
+		let operator;
+		let needClear;
+
+
+		let doIt = function () {
+			let display;
+			let value2 = document.querySelector('#display').value;
+			let x = parseInt(value1, 10);
+			let y = parseInt(value2, 10);
+
+
+
+			switch (operator) {
+				case '+':
+					display = x + y;
+					break;
+
+				case '-':
+					display = x - y;
+					break;
+
+				case '*':
+					display = x * y;
+					break;
+
+				default:
+					display = x / y;
+					break;
+			}
+			document.querySelector('#display').value = display;
+			return display;
+		}
+
+		let operate = function (oper) {
+			if (value1 === undefined) {
+				value1 = document.querySelector('#display').value;
+
+			} else {
+				value1 = doIt();
+			}
+			operator = oper;
+			needClear = true;
+	
+		}
+
+		let clearDisp = function () {
+			document.querySelector('#display').value = null;
+			value1 = undefined;
+			needClear = false;
+			operator = '';
+		}
+
+	</script>
+
+</body>
+
+</html>
