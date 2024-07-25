@@ -13,7 +13,7 @@ let memoryLastOperation = '';
 
 numbersBtn.forEach(num => {
     num.addEventListener('click', function (e) {
-        pressNum(e.toElement.innerHTML);
+        pressNum(e.target.innerHTML);
     });
 });
 
@@ -28,7 +28,10 @@ cleanAllBtn.addEventListener('click', function (e) {
 
 cleanLastBtn.addEventListener('click', function (e) {
     display.value = '0';
+    num1 = '0';
     num2 = '';
+    memoryLastOperation = '';
+    needClear = false;
 
 });
 
@@ -41,8 +44,6 @@ operationBtn.forEach(opb => {
 decimalBtn.addEventListener('click', decimal);
 
 resultBtn.addEventListener('click', result);
-
-//functions!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 function pressNum(numBtn) {
     if (memoryLastOperation === '') {

@@ -14,7 +14,7 @@ table {
 .display {
     border-radius: 0%;
     text-align: end;
-    background-color:rgb(134, 123, 67);
+    background-color: rgb(134, 123, 67);
     font-family: 'Press Start 2P', cursive;
     height: 70px;
     width: 227px;
@@ -34,12 +34,14 @@ td {
     user-select: none;
 }
 
-.numButton, .dot{
+.numButton,
+.dot {
     background-color: rgb(240, 219, 193);
     font-weight: 700;
 }
 
-.numButton:hover, .dot:hover {
+.numButton:hover,
+.dot:hover {
     transition: 0.5s;
     background-color: rgb(175, 143, 103);
 }
@@ -53,24 +55,15 @@ td {
     background-color: rgb(253, 66, 103);
 }
 
-.cleanAll {
-    background-color: rgb(233, 195, 149);
-}
-
-.cleanAll:hover {
-    background-color: rgb(235, 181, 115);
-}
-
-.operator {
+.cleanAll,
+.operator,
+.cleanAll:hover,
+.result {
     background-color: rgb(233, 195, 149);
 }
 
 .operator:hover {
     background-color: rgb(235, 181, 115);
-}
-
-.result {
-    background-color: rgb(233, 195, 149);
 }
 
 .result:hover {
